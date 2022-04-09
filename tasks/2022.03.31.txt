@@ -1,0 +1,2 @@
+Решение проблемы с VSCode и PowerShell
+https://russianblogs.com/article/80451124866/

@@ -1,0 +1,28 @@
+.card {
+	background-color: #FFE44D;
+	color: #000;
+	padding: 20px;
+	border-radius: 10px;
+	width: 200px;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	align-items: center;
+	box-sizing: border-box;
+	gap: 10px;
+}
+
+.card .pic {
+	width: 100%;
+}
+.card .price {
+	font-size: 1.5em;
+	color: orangered;
+	font-weight: 600;
+}
+.card .count {
+	color: #999;
+}
+.card .name {
+	width: 100%;
+}
