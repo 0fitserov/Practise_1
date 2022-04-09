@@ -1,6 +1,8 @@
 import React from "react";
 import "./index.css";
 import Logo from "../Logo";
+import {Link} from "react-router-dom";
+
 const Footer = () => {
     return (
         <footer className="container">
@@ -8,17 +10,11 @@ const Footer = () => {
                 <Logo/>
                 <div>copy</div>
             </div>
+            
             <ul className="column">
-                <li>text</li>
-                <li>text</li>
-                <li>text</li>
-                <li>text</li>
-            </ul>
-            <ul className="column">
-                <li>text</li>
-                <li>text</li>
-                <li>text</li>
-                <li>text</li>
+                   <li><Link to="/catalog">Каталог</Link></li>
+                   <li><Link to="/product">Товар</Link></li>
+                   <li><Link to="/contacts">Контакты</Link></li>
             </ul>
             <div className="column">
                 <div>text</div>

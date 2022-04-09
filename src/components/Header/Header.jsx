@@ -1,6 +1,10 @@
 import React from "react";
 import Logo from "../Logo";
 import Search from "../Search";
+import "./Header.css";
+// SPA - Single Page Application - одностраничное приложение
+import {Link} from "react-router-dom";
+
 
 const Header = function({searchText, appHandler}) {
     const searchHandler = inpVal => {
@@ -12,11 +16,12 @@ const Header = function({searchText, appHandler}) {
             <div className="container">
                 <Logo />
 				<Search searchText={searchText} searchHandler={searchHandler}/>
-                <a href=""></a>
-                <nav>
-                    <a href="">pic 1</a>
-                    <a href="">pic 2</a>
-                    <a href="">pic 3</a>
+                <nav style={{display: "flex", gap: "10px"}}>
+                    {/* <Link to="/">Главная</Link> */}
+                    
+                    <Link to="/favorites">Избранное</Link>
+                    <Link to="/cart">Корзина</Link>
+                    <Link to="/profile">Профиль</Link>
                 </nav>
             </div>
         </header>
