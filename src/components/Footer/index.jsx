@@ -8,7 +8,7 @@ const Footer = () => {
         <footer className="container">
             <div className="column">
                 <Logo/>
-                <div>copy</div>
+                <div>©DogFood.com</div>
             </div>
             
             <ul className="column">
@@ -18,8 +18,8 @@ const Footer = () => {
             </ul>
             <div className="column">
                 <div>text</div>
-                <div>mail</div>
-                <div>phone</div>
+                <div>dogfood@mail.ru</div>
+                <div>+7 (999) 999-88-77</div>
                 <ul className="soc">
                     <li>soc</li>
                     <li>soc</li>

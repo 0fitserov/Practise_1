@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import Header from './components/Header/Header.jsx';
 import Footer from "./components/Footer";
+import Modal from "./components/Modal";
 import api from "./Api.js";
 
 import Cart from "./pages/Cart.jsx";
@@ -12,11 +13,14 @@ import Products from "./pages/Products.jsx";
 import Profile from "./pages/Profile.jsx";
 import {Routes, Route} from "react-router-dom";
 
+
+
 function App () {
 	const [searchText, setSearch] = useState("");
 	const [data, setData] = useState([]);
 	const [goods, setGoods] = useState(data);
 	const [cnt, setSearchCnt] = useState(0);
+	const [modalActivity, setModalActivity] = useState(false);
 
 	const search = val => {
 		console.log("App", val);
@@ -28,14 +32,19 @@ function App () {
 
 	useEffect(() => {
 		api.getProductList().then(ans => {
-			console.log(ans[0]);
-			setData(ans);
-			setGoods(ans);
+			console.log(ans.products[0]);
+			setData(ans.products);
+			setGoods(ans.products); // {total, products: []}
 		});
 	}, []);
 
 	return <>
-		<Header searchText={searchText} appHandler={search}/>
+		<Header 
+			searchText={searchText} 
+			appHandler={search}
+			modalActivity={modalActivity}
+			setModalActivity={setModalActivity}
+		/>
 		<main>
 		   <Routes>
 		   	    <Route path="/cart" element={
@@ -61,7 +70,11 @@ function App () {
 				}/>
 		   </Routes>	
 		</main>
-		<Footer/>
+		<Footer />
+		<Modal 
+			active={modalActivity} 
+			changeActive={setModalActivity}
+		/>
 	</>
 }
 
