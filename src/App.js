@@ -16,6 +16,7 @@ import {Routes, Route} from "react-router-dom";
 
 
 function App () {
+	const [store, updateStore] = useState([]);
 	const [searchText, setSearch] = useState("");
 	const [data, setData] = useState([]);
 	const [goods, setGoods] = useState(data);
@@ -44,6 +45,7 @@ function App () {
 			appHandler={search}
 			modalActivity={modalActivity}
 			setModalActivity={setModalActivity}
+			store={store}
 		/>
 		<main>
 		   <Routes>
@@ -62,8 +64,8 @@ function App () {
 				<Route path="/" element={
 					<Main name="Главная"/>
 				}/>
-				<Route path="/product" element={
-					<Products name="Товар"/>
+				<Route path="/product/:id" element={ //:id параметризованный запрос (в данном случае по id) 
+					<Products store={store} updateStore={updateStore}/>
 				}/>
 				<Route path="/profile" element={
 					<Profile name="Личный кабинет"/>

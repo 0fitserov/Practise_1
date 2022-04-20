@@ -14,6 +14,13 @@ class Api {
             }
         }).then(responseHandler);
     }
+    getSingleProduct(id) {
+        return fetch(`${this.path}/products/${id}`, {
+            headers: {
+                authorization: `Bearer ${this.token}`
+            }
+        }).then(responseHandler);
+    }
 }
 
 const config = {

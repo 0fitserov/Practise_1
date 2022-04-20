@@ -26,3 +26,15 @@ a {
 main {
 	padding: 40px calc(50% - 500px);
 }
+
+.product-container {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 40px;
+}
+
+.product__pic {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
