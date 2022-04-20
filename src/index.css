@@ -29,12 +29,50 @@ main {
 
 .product-container {
 	display: grid;
+	
+	gap: 5px;
+}
+
+.product-mainInfo{
+	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	gap: 40px;
+	gap: 5px 40px;
+}
+
+.product-otherInfo{
+	display: grid;
+	width: 500px;
+	grid-gap: 10px;
 }
 
 .product__pic {
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: contain;
+	grid-gap: 10px;
+}
+
+.cartInfo {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 20px;
+}
+
+.counetrCart {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 40px;
+    border-radius: 20px;
+    border: 1px solid #cfd8dc;
+    background-color: transparent;
+    padding: 0 20px;
+    cursor: pointer;
+	
+}
+
+.supportInfo {
+	background: rgb(238, 236, 236);
+	border-radius: 12px;
+	padding: 0px 15px;
 }
